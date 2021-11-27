@@ -7,10 +7,7 @@ fn main() {
 
   let first = env::args().skip(1).next();
   match first {
-    None => {
-      println!("Usage: gcd NUMBER, ...");
-      std::process::exit(1);
-    },
+
     Some(v) => {
       let mut d = u64::from_str(&v).expect("error parsing arg");
       for m in env::args().skip(2) {
@@ -18,6 +15,11 @@ fn main() {
       }
       println!("The GCD of {:?} is {}", env::args(), d);
     }
+
+    None => {
+      println!("Usage: gcd NUMBER, ...");
+      std::process::exit(1);
+    },
   }
 }
 
