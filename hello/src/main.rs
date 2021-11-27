@@ -3,12 +3,7 @@ use std::env;
 use std::str::FromStr;
 
 fn main() {
-  println!("Hello, world!");
-
-  if env::args().len() == 1 {
-    println!("Usage: gcd NUMBER, ...");
-    std::process::exit(1);
-  }
+  println!("Hello, rust!");
 
   let first = env::args().skip(1).next();
   match first {
